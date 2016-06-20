@@ -1,0 +1,15 @@
+<div class="product_box margin_r35">
+<div class="image_wrapper"> 
+  <%= link_to((image_tag "new-product.jpg", :height => "170", :width => "170"), product) %>
+</div>
+<h3>
+  <%= link_to product.name, product %>
+</h3>
+<p class="price">
+  Price: $<%= product.price %>
+</p>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Edit', edit_product_path(product) %>
+  | <%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %>
+<% end %>
+</div>

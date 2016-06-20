@@ -1,0 +1,7 @@
+
+	<tr>
+		<td><%= cart_item.item.name %></td>
+		<td>$<%= cart_item.item.price %></td>
+		<td><%= cart_item.quantity %></td>
+		<td><%= link_to "Remove", remove_product_from_cart_path(cart_item.item.id) %></td>
+	</tr>

@@ -1,0 +1,21 @@
+
+<h1>Shopping Cart</h1>
+<% if @shopping_cart.shopping_cart_items.size > 0 %>
+	<table border="1">
+		<tr>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Action</th>
+		</th>
+		<%= render :partial => 'cart_item', :collection => @shopping_cart.shopping_cart_items %>
+	</table>
+	<br />
+	<div>
+	  <div><b>SubTotal:</b><%= number_to_currency @shopping_cart.subtotal %></div>
+	  <div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes %></div>
+	  <div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>
+	</div>
+<% else %>
+	Your cart is empty! Let's start shopping!
+<% end %>
