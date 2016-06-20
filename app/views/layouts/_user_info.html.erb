@@ -6,11 +6,13 @@
 <% end %>
 </div>
 
-<% if user_signed_in? && current_user.cart %> 
+<% if user_signed_in? %> 
     <div class="user_info_holder">
 	  <div class="user_welcome">      
 	  	<%= "Welcome #{current_user.email}" %>
+	  	<% if current_user.cart %>
 	  	Your cart total : $<%= current_user.cart.total %>/-
+	  	<% end %>
 	  </div>
 	  <div class="user_cart">
 	  	<%= link_to((image_tag "cart.png", :height => "47px", :alt => "Go to Cart", :title => "Go to Cart"), carts_index_path) %>
