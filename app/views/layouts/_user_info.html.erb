@@ -1,12 +1,20 @@
-<div style="float:right; font-size:16px; padding-top:20px; color: white">
+<div class="user_log_out">
 <% if user_signed_in? %>
-  <%= "Welcome #{current_user.email}" %>
   <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
 <% else %>
   <%= link_to "Login", new_user_session_path, :class => "login" %> 
 <% end %>
-<% if user_signed_in? && current_user.cart %> 
-  <br />Your cart total : $<%= current_user.cart.total %>/-
-  <br /><%= link_to "View Cart", carts_index_path %>
-<% end %> 
 </div>
+
+<% if user_signed_in? && current_user.cart %> 
+    <div class="user_info_holder">
+	  <div class="user_welcome">      
+	  	<%= "Welcome #{current_user.email}" %>
+	  	Your cart total : $<%= current_user.cart.total %>/-
+	  </div>
+	  <div class="user_cart">
+	  	<%= link_to((image_tag "cart.png", :height => "47px", :alt => "Go to Cart", :title => "Go to Cart"), carts_index_path) %>
+	  </div>
+	</div>
+<% end %> 
+  

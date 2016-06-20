@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!, :only => ["new", "create", "edit", "update", "destroy", "add_to_cart"]
+  before_filter :authenticate_user!, :only => ["new", "create", "edit", "update", "destroy"]
   before_filter :check_admin, :only => ["new", "create", "edit", "update", "destroy"]
   # GET /products
   # GET /products.json

@@ -5,8 +5,8 @@
           <div id="SlideItMoo_items">
             <% @featured_products.each do |product| %>
             <div class="SlideItMoo_element"> 
-              <%= link_to((image_tag "new-product.jpg", :height => "110", :width => "110"), product) %>
-              <%= link_to product.name, product %>
+              <%= link_to((image_tag "new-product.jpg", :height => "110", :width => "110"), product_details_path(:name => product.name.parameterize, :id => product.id)) %>
+              <%= link_to product.name, product_details_path(:name => product.name.parameterize, :id => product.id) %>
             </div>
             <% end %>
           </div>

@@ -7,12 +7,8 @@ ShoppingCart::Application.routes.draw do
 
   devise_for :user
 
-  resources :products do #, :member => { :add_to_cart => :get }
-    member do
-      get :add_to_cart
-    end
-  end
-
+  resources :products
+  match 'shop/:name/:id' => 'products#show', :as => :product_details
   match 'carts/:id/add_product_to_cart' => 'carts#add_product_to_cart', :as => :add_product_to_cart
   match 'carts/:id/remove_product_from_cart' => 'carts#remove_product_from_cart', :as => :remove_product_from_cart
   # The priority is based upon order of creation:

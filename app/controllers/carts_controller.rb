@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
 
+  before_filter :authenticate_user!
   before_filter :user_cart
 
   def add_product_to_cart
@@ -20,6 +21,8 @@ class CartsController < ApplicationController
 	  end
   	redirect_to carts_index_path
   end
+
+  private
 
   def user_cart
   	@shopping_cart = current_user.cart
