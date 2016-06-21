@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
   	@featured_products = Product.all(:limit => 4)
   end
 
+  def check_admin
+    unless current_user.admin?
+      flash[:alert] = "You are not authorized to access this page"
+      redirect_to root_path
+    end
+  end
+
 end

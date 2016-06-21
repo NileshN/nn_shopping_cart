@@ -11,6 +11,8 @@ ShoppingCart::Application.routes.draw do
   match 'shop/:name/:id' => 'products#show', :as => :product_details
   match 'carts/:id/add_product_to_cart' => 'carts#add_product_to_cart', :as => :add_product_to_cart
   match 'carts/:id/remove_product_from_cart' => 'carts#remove_product_from_cart', :as => :remove_product_from_cart
+  match 'make-payment/:cart_id' => 'carts#place_an_order', :as => :payments
+  match 'admin/manage_inventory' => 'carts#manage_inventory', :as => :manage_inventory
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

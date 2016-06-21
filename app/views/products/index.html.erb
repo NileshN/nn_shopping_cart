@@ -1,6 +1,11 @@
-    <div class="new_product">
-      <%= link_to 'Add New Product', new_product_path if user_signed_in? && current_user.admin? %>
-    </div>
+    <% if user_signed_in? && current_user.admin? %> 
+      <div class="new_product">
+        <%= link_to 'Add New Product', new_product_path %>
+      </div>
+      <div class="new_product">
+        <%= link_to 'Manager Orders', manage_inventory_path %>
+      </div>
+    <% end %> 
     <div class="content_section">
       <% if @products.any? %>
         <h2>Our Products</h2>

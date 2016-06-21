@@ -12,7 +12,11 @@ class Product < ActiveRecord::Base
 	end
 
 	def decrease_quantity
-	  self.quantity -= 1
-	  self.save
+	  if self.quantity > 0
+	    self.quantity -= 1
+	    self.save
+	  else
+	  	raise "Sorry, Product '#{self.name}' is Out of Stock at this time!"
+		end
 	end
 end

@@ -16,6 +16,9 @@
 	  <div><b>Taxes:</b><%= number_to_currency @shopping_cart.taxes %></div>
 	  <div><b>Total:</b><%= number_to_currency @shopping_cart.total %></div>
 	</div>
+	<div class="new_product">
+		<%= link_to "Place an order", payments_path(:cart_id => @shopping_cart.id) %>
+	</div>
 <% else %>
 	Your cart is empty! Let's start shopping!
 <% end %>
