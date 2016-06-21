@@ -1,6 +1,6 @@
 
 <h1>Shopping Cart</h1>
-<% if @shopping_cart.shopping_cart_items.size > 0 %>
+<% if @shopping_cart && @shopping_cart.shopping_cart_items.size > 0 %>
 	<table border="1">
 		<tr>
 			<th>Item</th>
