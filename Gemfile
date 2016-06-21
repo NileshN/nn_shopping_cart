@@ -4,8 +4,13 @@ gem 'rails', '3.2.20'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'mysql2', '0.3.10'
+group :development do
+  gem 'mysql2', '0.3.10'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 gem 'devise'
 gem 'acts_as_shopping_cart', '~> 0.1.6'
 
@@ -18,6 +23,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+ruby '1.9.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
