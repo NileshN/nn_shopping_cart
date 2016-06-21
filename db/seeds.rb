@@ -8,4 +8,4 @@
 User.new({ :email => 'admin@example.com', 
 	:password => 'password', 
 	:password_confirmation => 'password',
-	:admin => 1}).save
+	:admin => true}).save
