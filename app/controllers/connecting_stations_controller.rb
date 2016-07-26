@@ -1,0 +1,2 @@
+class ConnectingStationsController < ApplicationController
+end

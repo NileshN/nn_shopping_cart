@@ -11,12 +11,11 @@
 development:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
-  database: shopping_cart_development
+  database: travel_plan_development
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,7 +24,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: shopping_cart_test
+  database: travel_plan_test
   pool: 5
   username: root
   password:
@@ -35,7 +34,7 @@ production:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: shopping_cart_production
+  database: travel_plan_production
   pool: 5
   username: root
   password:

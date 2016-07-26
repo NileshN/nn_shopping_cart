@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module ShoppingCart
+module TravelPlan
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -47,5 +47,13 @@ module ShoppingCart
 
     config.assets.initialize_on_precompile = false
 
+  end
+  
+  begin
+    require 'priority_queue/CPriorityQueue'
+    PriorityQueue = CPriorityQueue
+  rescue LoadError # C Version could not be found, try ruby version
+    require 'priority_queue/ruby_priority_queue'
+    PriorityQueue = RubyPriorityQueue
   end
 end

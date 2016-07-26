@@ -1,0 +1,33 @@
+<h1>Listing Train Visiting Stations</h1>
+
+<table border="1">
+  <tr>
+    <th>Train</th>
+    <th>Station</th>
+    <th>Arrival days</th>
+    <th>Arrival time</th>
+    <th>Departure days</th>
+    <th>Departure time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @train_visiting_stations.each do |train_visiting_station| %>
+  <tr>
+    <td><%= train_visiting_station.train.display_name %></td>
+    <td><%= train_visiting_station.station.name %></td>
+    <td><%= train_visiting_station.arrival_days %></td>
+    <td><%= only_time train_visiting_station.arrival_time rescue '' %></td>
+    <td><%= train_visiting_station.departure_days %></td>
+    <td><%= only_time train_visiting_station.departure_time rescue '' %></td>
+    <td><%= link_to 'Show', train_visiting_station %></td>
+    <td><%= link_to 'Edit', edit_train_visiting_station_path(train_visiting_station) %></td>
+    <td><%= link_to 'Destroy', train_visiting_station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Train visiting station', new_train_visiting_station_path %>

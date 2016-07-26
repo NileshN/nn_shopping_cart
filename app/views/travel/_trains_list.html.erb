@@ -1,0 +1,18 @@
+<% trains_to_travel = get_trains_to_travel(@stations_res) if @stations_res %>
+<% if trains_to_travel %>
+	<div id="menu">
+		<p>You will need to board following given trains for this travel:</p>
+		<table border="1">
+			<tr>
+				<td><b>Train Name</b></td>
+				<td><b>Departure Time</b></td>
+			</tr>
+			<% trains_to_travel.each do |train| %>
+				<tr>
+				  <td> <%= train.display_name %> </td>
+				  <td> <%=  %> </td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+<% end %>

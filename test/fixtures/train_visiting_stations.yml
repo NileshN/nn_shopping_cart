@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  arrival_days: MyString
+  arrival_time: 2016-07-25 17:30:55
+  departure_days: MyString
+  departure_time: 2016-07-25 17:30:55
+  station_id: 1
+  train_id: 1
+
+two:
+  arrival_days: MyString
+  arrival_time: 2016-07-25 17:30:55
+  departure_days: MyString
+  departure_time: 2016-07-25 17:30:55
+  station_id: 1
+  train_id: 1

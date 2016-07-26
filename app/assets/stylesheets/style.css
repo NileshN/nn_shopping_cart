@@ -6,7 +6,6 @@ body {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 12px;
 	color: #333;
-    background: #e1d1d6 url(body.png) repeat-x top;
 }
 		
 a:link, a:visited { color: #dd0034; text-decoration: none; font-weight: normal; } 
@@ -38,7 +37,6 @@ img { margin: 0px; padding: 0px; border: none; }
 	text-decoration: none;
 	font-weight: bold;
 	font-family: Arial, Helvetica, sans-serif;
-	background: url(button.png) no-repeat;
 }
 
 .button_01 a:hover {
@@ -365,11 +363,12 @@ h3 {
 /* content */
 
 #content {
-	float: right;
-	width: 670px;
-	background: url(slider_tr.png) top right no-repeat;
-	margin-top: -12px;
-	min-height: 970px;
+	border: 1px solid black;
+    float: left;
+    margin-top: 30px;
+    min-height: 400px;
+    padding: 20px;
+    width: 670px;
 }
 
 #content #latest_product_gallery {

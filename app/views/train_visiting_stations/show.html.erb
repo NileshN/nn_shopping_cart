@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Arrival days:</b>
+  <%= @train_visiting_station.arrival_days %>
+</p>
+
+<p>
+  <b>Arrival time:</b>
+  <%= @train_visiting_station.arrival_time %>
+</p>
+
+<p>
+  <b>Departure days:</b>
+  <%= @train_visiting_station.departure_days %>
+</p>
+
+<p>
+  <b>Departure time:</b>
+  <%= @train_visiting_station.departure_time %>
+</p>
+
+<p>
+  <b>Station:</b>
+  <%= @train_visiting_station.station_id %>
+</p>
+
+<p>
+  <b>Train:</b>
+  <%= @train_visiting_station.train_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_train_visiting_station_path(@train_visiting_station) %> |
+<%= link_to 'Back', train_visiting_stations_path %>

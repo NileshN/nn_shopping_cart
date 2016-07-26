@@ -1,18 +1,24 @@
-ShoppingCart::Application.routes.draw do
+TravelPlan::Application.routes.draw do
+  resources :train_visiting_stations
+
+
+  get "travel/index"
+
+  resources :trains
+
+
+  resources :stations
+
+
+  resources :connecting_stations
+
+
   get "carts/index"
 
   # get "users/index"
 
   # get "users/show"
 
-  devise_for :user
-
-  resources :products
-  match 'shop/:name/:id' => 'products#show', :as => :product_details
-  match 'carts/:id/add_product_to_cart' => 'carts#add_product_to_cart', :as => :add_product_to_cart
-  match 'carts/:id/remove_product_from_cart' => 'carts#remove_product_from_cart', :as => :remove_product_from_cart
-  match 'make-payment/:cart_id' => 'carts#place_an_order', :as => :payments
-  match 'admin/manage_inventory' => 'carts#manage_inventory', :as => :manage_inventory
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -21,7 +27,8 @@ ShoppingCart::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  match 'travel/find_trains_between_stations' => 'travel#find_trains_between_stations', :as => :find_trains_between_stations
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
@@ -62,7 +69,7 @@ ShoppingCart::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'products#index'
+  root :to => 'travel#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,14 @@
+<%= render 'form' %>
+<div class="content_section">
+  <% if @trains.any? %>
+    <h2>All Trains</h2>
+    
+    <% @trains.each do |train| %>
+      <%= train.inspect %><br />
+    <% end %>
+    
+    <div class="cleaner"></div>
+  <% else %>
+    Sorry, there are no trains.
+  <% end %>
+</div>

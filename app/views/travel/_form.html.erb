@@ -1,0 +1,24 @@
+<%= form_tag find_trains_between_stations_path do %>
+<div id="menu">
+	<ul>
+		<li>Start station:</li>
+		<li>
+		  <%= select_tag "start_station", options_from_collection_for_select(@stations, "id", "name", (@start_station.id if @start_station))  %>
+		</li>
+	</ul>
+	<ul>
+		<li>Last station:</li>
+		<li>
+			<%= select_tag "last_station", options_from_collection_for_select(@stations, "id", "name", (@last_station.id if @last_station)) %>
+		</li>
+	</ul>
+	<ul>
+		<li>Departure Date:</li>
+		<li><%= datetime_select("travel", "departure_date") %></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li><%= submit_tag 'Submit' %></li>
+	</ul>
+</div>
+<% end %>

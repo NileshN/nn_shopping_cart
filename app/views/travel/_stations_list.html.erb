@@ -1,0 +1,12 @@
+<% if @stations_res %>
+	<div id="menu">
+		<p>You will visit following train stations while travelling from '<%= @start_station.name %>' to '<%= @last_station.name %>':</p>
+		<ul>
+			<li>
+			<% @stations_res.each_with_index do |station, index| %>
+			  <%= station %> <%= ">" unless @stations_res.size == index+1 %>
+			<% end %>
+			</li>
+		</ul>
+	</div>
+<% end %>

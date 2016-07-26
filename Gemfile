@@ -11,8 +11,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-gem 'devise'
-gem 'acts_as_shopping_cart', '~> 0.1.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,8 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-ruby '1.9.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

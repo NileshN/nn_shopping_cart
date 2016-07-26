@@ -1,0 +1,51 @@
+<%= form_for(@train_visiting_station) do |f| %>
+  <% if @train_visiting_station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@train_visiting_station.errors.count, "error") %> prohibited this train_visiting_station from being saved:</h2>
+
+      <ul>
+      <% @train_visiting_station.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :train_id %><br />
+    <%= f.select "train_id", options_from_collection_for_select(@trains, 'code', 'display_name') %>
+  </div>
+  <div class="field">
+    <%= f.label :station_id %><br />
+    <%= f.select "station_id", options_from_collection_for_select(@stations, "id", "name") %>
+  </div>
+  <br />
+  <div class="field">
+    Start staion?: <%= check_box :is_start_station, :flag %>
+  </div>
+  <div class="field">
+    Last staion?: <%= check_box :is_last_station, :flag %>
+  </div>
+  <br />
+  <div class="field">
+    <%= f.label :arrival_days %><br />
+    <%= f.text_field :arrival_days %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_time %><br />
+    <%= f.time_select :arrival_time, { ampm: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_days %><br />
+    <%= f.text_field :departure_days %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_time %><br />
+    <%= f.time_select :departure_time, { ampm: true} %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
